@@ -7,7 +7,7 @@ module.exports = {
   ga:"UA-120821049-1",
   themeConfig: {
     repo: 'shengxinjing',
-    lastUpdated: 'Last Updated',
+    lastUpdated: '更新时间',
     docsDir: 'docs',
     nav: [
       { text: 'javascript', link: '/javascript/' },

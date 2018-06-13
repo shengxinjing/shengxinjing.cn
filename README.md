@@ -1,7 +1,7 @@
 ---
 home: true
-heroImage: /logo.jpg
-actionText: react →
+heroImage: /snail.jpg
+actionText: React →
 actionLink: /react/
 features:
 - title: Javascript

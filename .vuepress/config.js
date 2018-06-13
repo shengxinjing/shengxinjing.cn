@@ -3,5 +3,7 @@ module.exports = {
   description: '资深程序员，擅长javascript，python',
   head: [
     ['link', { rel: 'icon', href: `/logo.ico` }]
-  ]
+  ],
+  ga:"UA-120821049-1"
+
 }

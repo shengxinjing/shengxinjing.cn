@@ -18,9 +18,22 @@ footer: MIT Licensed | Copyright © 2018-present
 
 ### 老子的意大利炮呢 轰他娘的
 
-{{ $page }}
 
-[[toc]]
+## React源码系列
+自己造一个mini版本全家桶 
+
+* React介绍
+* Vdom
+* patch
+* jsx
+* fiber
+* redux
+* react-redux
+* react-router
+* dva
+自己造一个
+
+测试
 
 ::: tip 嘿嘿
 This is a tip

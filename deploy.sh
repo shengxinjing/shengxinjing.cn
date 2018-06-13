@@ -14,5 +14,6 @@ npm run build
 
 git add -A
 git commit -m 'deploy'
+
 git push origin master
 ssh root@woniu "cd /root/shengxinjing.cn;git pull"

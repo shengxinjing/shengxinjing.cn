@@ -1,5 +1,6 @@
 ---
 home: true
+heroImage: /snail.jpg
 actionText: React →
 actionLink: /react/
 features:
@@ -12,7 +13,6 @@ features:
 footer: MIT Licensed | Copyright © 2018-present
 
 ---
-<!-- heroImage: /snail.jpg -->
 
 # 蜗牛的博客
 

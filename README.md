@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /snail.jpg
+heroImage: /snail.jpeg
 actionText: React →
 actionLink: /react/
 features:

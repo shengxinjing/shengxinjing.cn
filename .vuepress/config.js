@@ -8,16 +8,14 @@ module.exports = {
   themeConfig: {
     repo: 'shengxinjing',
     lastUpdated: '更新时间',
-    docsDir: 'docs',
     nav: [
-      { text: 'javascript', link: '/javascript/' },
-      { text: 'react', link: '/react/' },
-      { text: 'API', link: '/api/' },
+      { text: 'Javascript', link: '/javascript/' },
+      { text: 'React', link: '/react/' },
     ],
     sidebar: {
-      '/guide/': [
+      '/react/': [
         {
-          title: '指南',
+          title: 'React',
           collapsable: false,
           children: [
             '',

@@ -16,7 +16,7 @@ footer: MIT Licensed | Copyright © 2018-present
 
 # 蜗牛的博客
 
-### 老子的意大利炮呢 轰他娘的
+### 老子的意大利炮呢 轰他娘的！！！
 
 
 ## React源码系列

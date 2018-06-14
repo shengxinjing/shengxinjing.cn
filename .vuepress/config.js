@@ -23,7 +23,16 @@ module.exports = {
           ],
         },
       ],
-
+      '/react-code/': [
+        {
+          title: 'React',
+          collapsable: false,
+          children: [
+            '',
+            'getting-started',
+          ],
+        },
+      ],
     }
   },
 

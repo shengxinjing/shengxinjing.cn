@@ -10,7 +10,8 @@ module.exports = {
     lastUpdated: '更新时间',
     nav: [
       { text: 'Javascript', link: '/javascript/' },
-      { text: 'React', link: '/react/' },
+      { text: 'React全家桶实战', link: '/react/' },
+      { text: '构建自己的React全家桶', link: '/react-code/' },
     ],
     sidebar: {
       '/react/': [

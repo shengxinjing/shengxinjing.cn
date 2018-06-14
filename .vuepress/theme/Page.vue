@@ -169,8 +169,8 @@ function find (page, items, offset) {
 @import './styles/config.styl'
 @require './styles/wrapper.styl'
 #SOHUCS{
-  width:750px;
-  margin:0 auto;
+  width:750px !important;
+  margin:0 auto !important;
 }
 .page
   padding-bottom 2rem

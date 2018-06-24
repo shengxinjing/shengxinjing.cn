@@ -26,23 +26,37 @@
       </p>
     </div>
     <slot name="bottom"/>
-    <div id="SOHUCS" sid="id" ></div> 
-    
+    <!-- <div id="SOHUCS" sid="id" ></div>  -->
+    <div id="github-comment"></div>
   </div>
 </template>
 
 <script>
 import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
+import 'gitment/style/default.css'
+import Gitment from 'gitment'
 
 export default {
   props: ['sidebarItems'],
   mounted(){
-    (function(){ 
-    let appid = 'cytoUBPhR'; 
-    let conf = 'prod_e9c3098361c8007ab622a289cead0727'; 
-    let width = window.innerWidth || document.documentElement.clientWidth; 
-    if (width < 960) { 
-      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); 
+
+    var gitment = new Gitment({
+      // id: '页面 ID', // 可选。默认为 location.href
+      owner: 'shengxinjing',
+      repo: 'https://github.com/shengxinjing/blog-comment',
+      oauth: {
+        client_id: '6267f611f5d1cfc47824',
+        client_secret: 'b2eb8562b6aa805429378a2802622e2074f5bec8',
+      },
+    })
+    gitment.render('github-comment')
+
+    // (function(){ 
+    // let appid = 'cytoUBPhR'; 
+    // let conf = 'prod_e9c3098361c8007ab622a289cead0727'; 
+    // let width = window.innerWidth || document.documentElement.clientWidth; 
+    // if (width < 960) { 
+      // window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); 
   },
   computed: {
     lastUpdated () {
@@ -168,7 +182,7 @@ function find (page, items, offset) {
 <style lang="stylus">
 @import './styles/config.styl'
 @require './styles/wrapper.styl'
-#SOHUCS{
+#github-comment{
   width:750px !important;
   margin:0 auto !important;
 }

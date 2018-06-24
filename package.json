@@ -3,5 +3,8 @@
     "build": "vuepress build .",
     "start": "vuepress dev .",
     "deploy": "sh deploy.sh"
+  },
+  "dependencies": {
+    "gitment": "0.0.3"
   }
 }

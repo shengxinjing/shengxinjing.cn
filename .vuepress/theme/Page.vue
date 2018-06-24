@@ -40,25 +40,11 @@ export default {
   props: ['sidebarItems'],
   mounted(){
 
-
+    this.init(location.pathname)
 
     this.$router.afterEach(trans=>{
       if(trans.path!==location.pathname){
-        console.log(trans.path,location.pathname)
-        var gitment = new Gitment({
-          id:location.href,
-          // id: '页面 ID', // 可选。默认为 location.href
-          owner: 'shengxinjing',
-          // repo: 'https://github.com/shengxinjing/blog-comment',
-          repo:"blog-comment",
-          oauth: {
-            client_id: '6267f611f5d1cfc47824',
-            client_secret: 'b2eb8562b6aa805429378a2802622e2074f5bec8',
-          },
-        })
-        gitment.render('github-comment')
-
-
+        this.init(trans.path)
       }
     })
     // console.log(this.$router)
@@ -146,6 +132,20 @@ export default {
     }
   },
   methods: {
+    init(path){
+        var gitment = new Gitment({
+          id:location.origin+path,
+          // id: '页面 ID', // 可选。默认为 location.href
+          owner: 'shengxinjing',
+          // repo: 'https://github.com/shengxinjing/blog-comment',
+          repo:"blog-comment",
+          oauth: {
+            client_id: '6267f611f5d1cfc47824',
+            client_secret: 'b2eb8562b6aa805429378a2802622e2074f5bec8',
+          },
+        })
+        gitment.render('github-comment')
+    },
     createEditLink (repo, docsRepo, docsDir, docsBranch, path) {
       const bitbucket = /bitbucket.org/
       if (bitbucket.test(repo)) {

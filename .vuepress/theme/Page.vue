@@ -50,12 +50,25 @@ export default {
         client_secret: 'b2eb8562b6aa805429378a2802622e2074f5bec8',
       },
     })
-    gitment.render('github-comment')
-    window.removeEventListener('hashchange')
-    window.addEventListener('hashchange', () => {
-      gitment.update()
-      // this.transitionTo(...)
+    this.$router.afterEach(trans=>{
+      if(trans.path!==location.pathname){
+        gitment.render('github-comment')
+        
+        // gitment.update()
+
+      }
     })
+    // console.log(this.$router)
+    // gitment.render('github-comment')
+    // function changefn
+    // window.removeEventListener('hashchange')
+    // window.addEventListener('hashchange', () => {
+    //   console.log('change')
+    
+    
+      
+    //   // this.transitionTo(...)
+    // })
 
     // (function(){ 
     // let appid = 'cytoUBPhR'; 

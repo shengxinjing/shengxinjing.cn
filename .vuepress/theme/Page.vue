@@ -51,6 +51,11 @@ export default {
       },
     })
     gitment.render('github-comment')
+    window.removeEventListener('hashchange')
+    window.addEventListener('hashchange', () => {
+      gitment.update()
+      // this.transitionTo(...)
+    })
 
     // (function(){ 
     // let appid = 'cytoUBPhR'; 

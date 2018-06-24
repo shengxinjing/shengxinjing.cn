@@ -50,11 +50,14 @@ export default {
         client_secret: 'b2eb8562b6aa805429378a2802622e2074f5bec8',
       },
     })
+    gitment.render('github-comment')
+    
     this.$router.afterEach(trans=>{
       if(trans.path!==location.pathname){
-        gitment.render('github-comment')
+        console.log('change')
+        // gitment.render('github-comment')
         
-        // gitment.update()
+        gitment.update()
 
       }
     })

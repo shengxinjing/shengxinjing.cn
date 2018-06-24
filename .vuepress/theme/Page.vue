@@ -44,7 +44,7 @@ export default {
       // id: '页面 ID', // 可选。默认为 location.href
       owner: 'shengxinjing',
       // repo: 'https://github.com/shengxinjing/blog-comment',
-      repo:"shengxinjing.cn",
+      repo:"blog-comment",
       oauth: {
         client_id: '6267f611f5d1cfc47824',
         client_secret: 'b2eb8562b6aa805429378a2802622e2074f5bec8',

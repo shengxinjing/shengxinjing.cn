@@ -44,8 +44,9 @@ export default {
 
     this.$router.afterEach(trans=>{
       if(trans.path!==location.pathname){
-
+        console.log(trans.path,location.pathname)
         var gitment = new Gitment({
+          id:location.href,
           // id: '页面 ID', // 可选。默认为 location.href
           owner: 'shengxinjing',
           // repo: 'https://github.com/shengxinjing/blog-comment',

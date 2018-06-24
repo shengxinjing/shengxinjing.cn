@@ -17,6 +17,25 @@
       </div>
     </div>
     <Content custom/>
+    
+    <div>
+      <h2>最新文章</h2>
+      <h3 v-for='article in articles'>
+        <span class="description">
+        {{article.create_time}} >> 
+
+        </span>
+        <router-link
+          class="nav-link"
+          :to="article.body"
+        >{{ article.title }}
+      
+      
+      </router-link>
+      <Badge type='' :text="article.comments+'条评论'"/>
+
+      </h3>
+    </div>
     <div class="footer" v-if="data.footer">
       {{ data.footer }}
     </div>
@@ -25,9 +44,38 @@
 
 <script>
 import NavLink from './NavLink.vue'
-
+import axios from 'axios'
 export default {
+  data(){
+    return {
+      articles:[]
+    }
+  },
   components: { NavLink },
+  async mounted(){
+    // axios.defaults.headers.common['Authorization'] = "5de13e577661d05daaa9995a4c60d46d4f5c81c7"
+    try{
+      const issues = await axios.get('https://api.github.com/repos/shengxinjing/blog-comment/issues?access_token=5de13e577661d05daaa9995a4c60d46d4f5c81c7')
+      const articles = issues.data.filter(v=>v.author_association=="OWNER")
+      this.articles = articles.map(v=>{
+        const obj = {
+          title:v.title.split('|')[0],
+          create_time:v.created_at.slice(0,10),
+          body:v.body.slice(22).split('\n').join(''),
+          comments:v.comments+'',
+          
+
+        }
+        return obj
+      })
+      // console.log(issues.data)
+    }catch(e){
+      console.log(e)
+    }
+
+    // console.log(this.$site)
+    // const articles = 
+  },
   computed: {
     data () {
       return this.$page.frontmatter
@@ -45,6 +93,8 @@ export default {
 <style lang="stylus">
 @import './styles/config.styl'
 
+span.description
+  color: #6a8bad !important;
 .home
   padding $navbarHeight 2rem 0
   max-width 960px
@@ -52,7 +102,7 @@ export default {
   .hero
     text-align center
     img
-      max-height 280px
+      max-height 120px
       display block
       margin 3rem auto 1.5rem
     h1

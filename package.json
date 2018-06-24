@@ -5,6 +5,7 @@
     "deploy": "sh deploy.sh"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "gitment": "0.0.3"
   }
 }

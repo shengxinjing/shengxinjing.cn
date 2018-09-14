@@ -21,6 +21,8 @@ module.exports = {
           collapsable: false,
           children: [
             '',
+            'mpvue-update',
+
           ],
         },
       ],

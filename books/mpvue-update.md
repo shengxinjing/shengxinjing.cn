@@ -85,9 +85,7 @@ mysql初始化报错有两个可能
 ```
 
 然后再把data里的nickName设置为空即可
-
-更改后的代码如下，只修改了html和js里的nickName 其他并没有变化
-当然官方的wafer的sdk新增了requestLogin方法，我们使用[wafer-client-sdk](https://github.com/tencentyun/wafer2-client-sdk)
+[wafer-client-sdk](https://github.com/tencentyun/wafer2-client-sdk)
 
 之前登录的逻辑贼简单，调用一下login之后使用request即可，后面更新一次 加了验证用户允许的逻辑，后来直接改为button，不需要getSettings，最终逻辑如下
 ``` js

@@ -11,8 +11,9 @@ module.exports = {
     nav: [
       // { text: 'Javascript', link: '/javascript/' },
       { text: '读书', link: '/books/' },      
-      { text: 'React全家桶实战', link: '/react/' },
-      { text: '构建自己的React全家桶', link: '/react-code/' },
+      { text: 'React全家桶', link: '/react/' },
+      { text: '构建自己的React', link: '/react-code/' },
+      { text: '区块链', link: '/blockchain/' },
     ],
     sidebar: {
       '/books/': [
@@ -44,6 +45,17 @@ module.exports = {
           children: [
             '',
             'getting-started',
+          ],
+        },
+      ],
+
+      '/blockchain/': [
+        {
+          title: 'Blockchain',
+          collapsable: false,
+          children: [
+            '',
+            // 'build-block-with-nodejs',
           ],
         },
       ],

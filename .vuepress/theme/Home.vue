@@ -25,11 +25,18 @@
         {{article.create_time}} >> 
 
         </span>
-        <a
+
+        <!-- <router-link
+          class="nav-link"
+          :to="article.body"
+        >{{ article.title }}
+      
+      </router-link> -->
+
+      <a
           class="nav-link"
           :href="article.body"
         >{{ article.title }}
-      
       
       </a>
       <Badge type='' :text="article.comments+'条评论'"/>
@@ -51,6 +58,13 @@ export default {
     return {
       articles:[]
     }
+  },
+  methods:{
+    // jump(url){
+    //   console.log(url)
+    //   console.log(this.$router)
+    //   this.$router.push(url)
+    // }
   },
   components: { NavLink },
   async mounted(){

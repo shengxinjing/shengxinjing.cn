@@ -25,13 +25,13 @@
         {{article.create_time}} >> 
 
         </span>
-        <router-link
+        <a
           class="nav-link"
-          :to="article.body"
+          :href="article.body"
         >{{ article.title }}
       
       
-      </router-link>
+      </a>
       <Badge type='' :text="article.comments+'条评论'"/>
 
       </h3>
@@ -69,6 +69,7 @@ export default {
         }
         return obj
       })
+      console.log(this.articles)
       // console.log(issues.data)
     }catch(e){
       console.log(e)

@@ -1,11 +1,13 @@
 {
   "scripts": {
-    "build": "vuepress build .",
+    "build": "npm run list && vuepress build .",
     "start": "vuepress dev .",
-    "deploy": "sh deploy.sh"
+    "deploy": "sh deploy.sh",
+    "list": "node spider.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "gitment": "0.0.3"
+    "gitment": "0.0.3",
+    "request": "^2.88.0"
   }
 }

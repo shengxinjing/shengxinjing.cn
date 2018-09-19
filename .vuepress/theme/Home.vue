@@ -45,6 +45,7 @@
 <script>
 import NavLink from './NavLink.vue'
 import axios from 'axios'
+import articles from './article.json'
 export default {
   data(){
     return {
@@ -55,8 +56,8 @@ export default {
   async mounted(){
     // axios.defaults.headers.common['Authorization'] = "5de13e577661d05daaa9995a4c60d46d4f5c81c7"
     try{
-      const issues = await axios.get('https://api.github.com/repos/shengxinjing/my_blog/issues?access_token=5de13e577661d05daaa9995a4c60d46d4f5c81c7')
-      const articles = issues.data.filter(v=>v.author_association=="OWNER"&&v.created_at.slice(0,4)>'2017')
+      // const issues = await axios.get('https://api.github.com/repos/shengxinjing/my_blog/issues?access_token=5de13e577661d05daaa9995a4c60d46d4f5c81c7')
+      // const articles = issues.data.filter(v=>v.author_association=="OWNER"&&v.created_at.slice(0,4)>'2017')
       this.articles = articles.map(v=>{
         const obj = {
           title:v.title.split('|')[0],

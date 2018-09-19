@@ -55,7 +55,7 @@ module.exports = {
           collapsable: false,
           children: [
             '',
-            // 'build-block-with-nodejs',
+            'build-block-with-nodejs',
           ],
         },
       ],

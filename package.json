@@ -2,7 +2,7 @@
   "scripts": {
     "build": "npm run list && vuepress build .",
     "start": "vuepress dev .",
-    "deploy": "sh deploy.sh",
+    "push": "sh deploy.sh",
     "list": "node spider.js"
   },
   "dependencies": {

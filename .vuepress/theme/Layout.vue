@@ -86,7 +86,7 @@ export default {
   },
 
   mounted () {
-    window.addEventListener('scroll', this.onScroll)
+    window&&window.addEventListener('scroll', this.onScroll)
 
     // configure progress bar
     nprogress.configure({ showSpinner: false })

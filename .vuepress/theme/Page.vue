@@ -33,10 +33,10 @@
 
 <script>
 import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
-// import 'gitment/style/default.css'
-// import Gitment from 'gitment'
-import 'gitalk/dist/gitalk.css'
-import Gitalk from 'gitalk'
+import 'gitment/style/default.css'
+import Gitment from 'gitment'
+// import 'gitalk/dist/gitalk.css'
+// import Gitalk from 'gitalk'
 
 
 export default {
@@ -136,28 +136,28 @@ export default {
   },
   methods: {
     init(path){
-        // var gitment = new Gitment({
-        //   id:location.origin+path,
-        //   // id: '页面 ID', // 可选。默认为 location.href
-        //   owner: 'shengxinjing',
-        //   // repo: 'https://github.com/shengxinjing/blog-comment',
-        //   repo:"my_blog",
-        //   oauth: {
-        //     client_id: '6267f611f5d1cfc47824',
-        //     client_secret: 'b2eb8562b6aa805429378a2802622e2074f5bec8',
-        //   },
-        // })
-const gitalk = new Gitalk({
-  clientID: '6267f611f5d1cfc47824',
-  clientSecret: 'b2eb8562b6aa805429378a2802622e2074f5bec8',
-  repo: 'my_blog',
-  owner: 'shengxinjing',
-  admin: ['shengxinjing'],
-  id: location.pathname,      // Ensure uniqueness and length less than 50
-  distractionFreeMode: false  // Facebook-like distraction free mode
-})
+        var gitment = new Gitment({
+          id:location.pathname,
+          // id: '页面 ID', // 可选。默认为 location.href
+          owner: 'shengxinjing',
+          // repo: 'https://github.com/shengxinjing/blog-comment',
+          repo:"my_blog",
+          oauth: {
+            client_id: '6267f611f5d1cfc47824',
+            client_secret: 'b2eb8562b6aa805429378a2802622e2074f5bec8',
+          },
+        })
+// const gitalk = new Gitalk({
+//   clientID: '6267f611f5d1cfc47824',
+//   clientSecret: 'b2eb8562b6aa805429378a2802622e2074f5bec8',
+//   repo: 'my_blog',
+//   owner: 'shengxinjing',
+//   admin: ['shengxinjing'],
+//   id: location.pathname,      // Ensure uniqueness and length less than 50
+//   distractionFreeMode: false  // Facebook-like distraction free mode
+// })
 
-        gitalk.render('github-comment')
+//         gitalk.render('github-comment')
     },
     createEditLink (repo, docsRepo, docsDir, docsBranch, path) {
       const bitbucket = /bitbucket.org/

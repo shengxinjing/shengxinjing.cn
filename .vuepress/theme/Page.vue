@@ -218,7 +218,7 @@ function find (page, items, offset) {
 @import './styles/config.styl'
 @require './styles/wrapper.styl'
 #github-comment{
-  width:100%;
+  width:90%;
   margin:0 auto !important;
 }
 .page

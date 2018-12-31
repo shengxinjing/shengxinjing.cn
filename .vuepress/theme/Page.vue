@@ -137,7 +137,7 @@ export default {
   methods: {
     init(path){
         var gitment = new Gitment({
-          id:location.pathname,
+          id:location.origin+location.pathname,
           // id: '页面 ID', // 可选。默认为 location.href
           owner: 'shengxinjing',
           // repo: 'https://github.com/shengxinjing/blog-comment',

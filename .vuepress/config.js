@@ -11,18 +11,21 @@ module.exports = {
     nav: [
       // { text: 'Javascript', link: '/javascript/' },
       { text: '读书', link: '/books/' },      
-      { text: 'React全家桶', link: '/react/' },
+      // { text: 'React全家桶', link: '/react/' },
       { text: '构建自己的React', link: '/react-code/' },
       { text: '区块链', link: '/blockchain/' },
     ],
     sidebar: {
       '/books/': [
         {
-          title: '总结',
+          title: '读书',
           collapsable: false,
           children: [
-            '',
+            '2019',
             'mpvue-update',
+            '',
+            
+            
 
           ],
         },

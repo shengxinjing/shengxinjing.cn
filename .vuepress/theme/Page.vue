@@ -157,7 +157,7 @@ export default {
 //   distractionFreeMode: false  // Facebook-like distraction free mode
 // })
 
-//         gitalk.render('github-comment')
+        gitment.render('github-comment')
     },
     createEditLink (repo, docsRepo, docsDir, docsBranch, path) {
       const bitbucket = /bitbucket.org/

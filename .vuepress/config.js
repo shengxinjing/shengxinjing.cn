@@ -10,12 +10,24 @@ module.exports = {
     lastUpdated: '更新时间',
     nav: [
       // { text: 'Javascript', link: '/javascript/' },
+      { text: '前端', link: '/fe/' },      
       { text: '读书', link: '/books/' },      
       // { text: 'React全家桶', link: '/react/' },
       { text: '构建自己的React', link: '/react-code/' },
       { text: '区块链', link: '/blockchain/' },
     ],
     sidebar: {
+      '/fe/': [
+        {
+          title: '前端面试',
+          collapsable: false,
+          children: [
+            'interview',
+            'qa',
+            '',
+          ],
+        },
+      ],
       '/books/': [
         {
           title: '读书',

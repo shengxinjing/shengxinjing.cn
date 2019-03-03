@@ -102,6 +102,13 @@ export default {
       nprogress.done()
       this.isSidebarOpen = false
     })
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6ea15261d00adea60618da6ace0c4e1c";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
   },
 
   methods: {

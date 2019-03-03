@@ -13,7 +13,7 @@ module.exports = {
       { text: '前端', link: '/fe/' },      
       { text: '读书', link: '/books/' },      
       // { text: 'React全家桶', link: '/react/' },
-      { text: '构建自己的React', link: '/react-code/' },
+      { text: '造轮子', link: '/wheel/' },
       { text: '区块链', link: '/blockchain/' },
     ],
     sidebar: {
@@ -53,9 +53,9 @@ module.exports = {
         },
       ],
 
-      '/react-code/': [
+      '/wheel/': [
         {
-          title: 'React',
+          title: '造轮子',
           collapsable: false,
           children: [
             '',

@@ -1,9 +1,19 @@
+const crypto = require('crypto')
 module.exports = {
   title: '蜗牛老湿的个人网站',
   description: '资深程序员，擅长javascript，python',
   head: [
     ['link', { rel: 'icon', href: `/logo.ico` }]
   ],
+
+  markdown: {
+    lineNumbers: true,
+    slugify(str){
+      // return 'xx'+str
+      // console.log(arguments)
+      return  crypto.createHash('md5').update(str).digest('hex').slice(0,6);
+    }
+  },
   ga:"UA-120821049-1",
   themeConfig: {
     repo: 'shengxinjing',

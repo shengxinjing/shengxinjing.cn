@@ -79,6 +79,8 @@ vue或者react都可以啊，但是我觉得，无论干啥，都需要研究源
 
 会的 pdf发群里了，整理后的文档我尽快发出来，关于一些细节的疑问，大家可以留言，我会写博客和文档来整理
 
+pdf地址： [百度网盘](https://pan.baidu.com/s/1W9VDMc4vo4LpRzcdjEHZ9w)  密码:5c83
+
 ## canvas和webgl目前业内应用怎么样？前景怎么样？webvr前景怎么样？
 
 canvas业内应用很多啊，比如echarts就是基于canvas的，大部分可视化的画图，都是canvas和svg的，  webgl现在最大的应用就是用three.js做3D的可视化，前景很不错，  webvr 我不是很看好，现在vr技术本身就不太成熟

@@ -11,7 +11,7 @@ module.exports = {
     slugify(str){
       // return 'xx'+str
       // console.log(arguments)
-      return  crypto.createHash('md5').update(str).digest('hex').slice(0,6);
+      return  crypto.createHash('md5').update(str).digest('hex');
     }
   },
   ga:"UA-120821049-1",

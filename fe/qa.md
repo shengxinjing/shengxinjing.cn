@@ -271,12 +271,12 @@ SSR了解一下
 <div id="demo">嘿嘿</div>
 ```
 
-虚拟dom简历后，我们js里存储了一个巨大的对象，来描述整个应用，这个就是虚拟dom
+虚拟dom建立后，我们js里存储了一个巨大的对象，来描述整个应用，这个就是虚拟dom
 
 ## 
 ## 前端进阶流程有哪些要求？
 
-1. 组件化设计历年，建议学习element-ui或者ant-design的远吗
+1. 组件化设计理念，建议学习element-ui或者ant-design的源码
 2. 库的源码，vue或者React
 3. nodejs
 4. 性能优化

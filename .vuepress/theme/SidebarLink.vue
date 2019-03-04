@@ -30,17 +30,29 @@ export default {
 }
 
 function renderLink (h, to, text, active) {
-  return h('router-link', {
-    props: {
-      to,
-      activeClass: '',
-      exactActiveClass: ''
-    },
-    class: {
-      active,
-      'sidebar-link': true
+  console.log(arguments)
+  if(to.indexOf('#')===0){
+    // 锚点
+    if(active){
+      return <a class="active sidebar-link"  href={to}>{{text}}</a>
+    }else{
+      return <a class="sidebar-link"  href={to}>{{text}}</a>
+
     }
-  }, text)
+  }else{
+    return h('router-link', {
+      props: {
+        to,
+        activeClass: '',
+        exactActiveClass: ''
+      },
+      class: {
+        active,
+        'sidebar-link': true
+      }
+    }, text)
+  }
+
 }
 
 function renderChildren (h, children, path, route, maxDepth, depth = 1) {

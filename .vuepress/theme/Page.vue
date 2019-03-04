@@ -54,6 +54,21 @@ export default {
         this.init(trans.path)
       }
     })
+
+    // const doms = document.querySelectorAll('.sidebar-sub-header a')
+
+    // for (let i = 0; i < doms.length; i++) {
+    //   const element = doms[i];
+    //   const href = element.getAttribute('href')
+    //   console.log(href)
+    //   if(href.indexOf(location.pathname)===0){
+    //       element.setAttribute('href', '#'+href.split('#')[1])
+    //       element.removeEventListener('click',()=>{})
+    //   }
+    // }
+
+
+
     // console.log(this.$router)
     // gitment.render('github-comment')
     // function changefn

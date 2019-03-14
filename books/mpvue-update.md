@@ -3,6 +3,10 @@
 
 由于小程序和mpvue都在迅猛发展，导致课程老的代码出现了很多不兼容，这里总结一下不兼容的点  保证代码目录下面的/newest目录能在最新的环境下跑起来
 
+## windows mysql登录报错1045
+
+* https://www.2cto.com/database/201507/413996.html
+* https://www.jb51.net/article/82421.htm
 
 ##  mpvue版本更新
 

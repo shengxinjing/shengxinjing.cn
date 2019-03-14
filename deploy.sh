@@ -10,7 +10,7 @@ set -e
 
 # 如果是发布到自定义域名
 # echo 'www.example.com' > CNAME
-node spider.js
+# node spider.js
 git add -A
 git commit -m 'deploy'
 

@@ -11,9 +11,15 @@ set -e
 # 如果是发布到自定义域名
 # echo 'www.example.com' > CNAME
 npm run list
+
+npm run build
+
+# tar -cvjpf pack.tar.bz2 .vuepress/dist
+scp -r .vuepress/dist root@woniu:/root/sheng
+
 git add -A
 git commit -m 'deploy'
 
 git push origin master
-ssh root@woniu "cd /root/shengxinjing.cn;git pull;npm run build"
+# ssh root@woniu "cd /root/shengxinjing.cn;git pull;npm run build"
 exit

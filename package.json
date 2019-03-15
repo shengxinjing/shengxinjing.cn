@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "build": "npm run list && vuepress build .",
-    "start": "vuepress dev .",
+    "build": " vuepress build .",
+    "start": "npm run list && vuepress dev .",
     "push": "sh deploy.sh",
     "list": "node spider.js"
   },

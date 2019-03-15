@@ -138,7 +138,6 @@ export default {
 }
 
 </script>
-
 ```
 
 
@@ -175,9 +174,7 @@ export default {
   components:{Child1}
 
 }
-
 </script>
-
 ```
 
 
@@ -247,8 +244,6 @@ div{
   padding:20px;
 }
 </style>
-
-
 ```
 
 
@@ -275,8 +270,6 @@ export default {
     
 }
 </script>
-
-
 ```
 
 
@@ -301,7 +294,7 @@ props一层层传递，爷爷给孙子还好，如果嵌套了五六层还这么
 
 
 
-现在很多开源库都使用这个api来做跨层级的数据共享，比如element-ui
+现在很多开源库都使用这个api来做跨层级的数据共享，比如element-ui的[tabs](https://github.com/ElemeFE/element/blob/efcfbdde0f06e3e1816f1a8cd009a4e413e6e290/packages/tabs/src/tabs.vue#L26) 和 [select](https://github.com/ElemeFE/element/blob/f55fbdb051f95d52e92f7a66aee9a58e41025771/packages/select/src/select.vue#L161)
 
 
 
@@ -321,8 +314,6 @@ export default {
 
 </script>
 <style>
-
-
 ```
 
 
@@ -344,7 +335,6 @@ export default {
     inject:['woniu']
 }
 </script>
-
 ```
 
 
@@ -353,21 +343,193 @@ export default {
 
 
 
+但是provider和inject不是响应式的，如果子孙元素想通知祖先，就需要hack一下，Vue1中有dispatch和boardcast两个方法，但是vue2中被干掉了，我们自己可以模拟一下
+
+原理就是可以通过this.$parent和this.$children来获取父组件和子组件，我们递归一下就可以了
 
 
 
 
 
+## 5. dispatch
+
+递归获取$parent即可  比较简单
+
+
+
+```html
+<button @click="dispatch('dispatch','哈喽 我是GrandGrandChild1')">dispatch</button>
+```
+
+```js
+  methods: {
+
+    dispatch(eventName, data) {
+      let parent = this.$parent
+      // 查找父元素
+      while (parent ) {
+        if (parent) {
+          // 父元素用$emit触发
+          parent.$emit(eventName,data)
+          // 递归查找父元素
+          parent = parent.$parent
+        }else{
+          break
+
+        }
+      }
+ 
+    }
+  }
+```
+
+
+
+![dispatch](https://ws2.sinaimg.cn/large/006tKfTcly1g13ju4cl41g30ra0f0t9y.gif)
+
+
+
+注意只向上传递了，并没有影响别的元素
+
+
+
+## 6. boardcast
+
+和dispatch类似，递归获取$children 来向所有子元素广播
+
+```html
+<button @click="$boardcast('boardcast','我是Child1')">广播子元素</button>
+```
+
+
+
+```js
+function boardcast(eventName, data){
+  this.$children.forEach(child => {
+    // 子元素触发$emit
+    child.$emit(eventName, data)
+    if(child.$children.length){
+      // 递归调用，通过call修改this指向 child
+      boardcast.call(child, eventName, data)
+    }
+  });
+}
+{
+  methods: {
+
+    $boardcast(eventName, data) {
+      boardcast.call(this,eventName,data)
+    }
+  }
+}
+```
+
+![boardcast](https://ws3.sinaimg.cn/large/006tKfTcly1g13lhw3yhvg30ra0f00tz.gif)
 
 
 
 
 
+## 7. 全局挂载dispatch和boardcast
+
+想用的时候，需要自己组件内部定理dispatch和boardcast太烦了，我们挂载到Vue的原型链上，岂不是很high,找到main.js
+
+
+
+```js
+Vue.prototype.$dispatch =  function(eventName, data) {
+  let parent = this.$parent
+  // 查找父元素
+  while (parent ) {
+    if (parent) {
+      // 父元素用$emit触发
+      parent.$emit(eventName,data)
+      // 递归查找父元素
+      parent = parent.$parent
+    }else{
+      break
+    }
+  }
+}
+
+Vue.prototype.$boardcast = function(eventName, data){
+  boardcast.call(this,eventName,data)
+}
+function boardcast(eventName, data){
+  this.$children.forEach(child => {
+    // 子元素触发$emit
+    child.$emit(eventName, data)
+    if(child.$children.length){
+      // 递归调用，通过call修改this指向 child
+      boardcast.call(child, eventName, data)
+    }
+  });
+}
+
+```
+
+这样组件里直接就可以用了 无压力
+
+
+
+## 8. 没啥关系的组件：event-bus
+
+如果俩组件没啥关系呢，我们只能使用订阅发布模式来做，并且挂载到Vue.protytype之上，我们来试试，我们称呼这种机制为总线机制，也就是喜闻乐见的 event-bus
+
+```js
+
+class Bus{
+  constructor(){
+    // {
+    //   eventName1:[fn1,fn2],
+    //   eventName2:[fn3,fn4],
+    // }
+    this.callbacks = {}
+  }
+  $on(name,fn){
+    this.callbacks[name] = this.callbacks[name] || []
+    this.callbacks[name].push(fn)
+  }
+  $emit(name,args){
+    if(this.callbacks[name]){
+      // 存在 遍历所有callback
+      this.callbacks[name].forEach(cb=> cb(args))
+    }
+  }
+}
+
+Vue.prototype.$bus = new Bus()
+```
+
+
+
+使用
+
+```js
+// 使用
+eventBus(){
+    this.$bus.$emit('event-bus','测试eventBus')
+}
+
+// 监听
+this.$bus.$on("event-bus",msg=>{
+    this.msg = '接收event-bus消息:'+ msg
+})
+```
+
+![eventbus](https://ws1.sinaimg.cn/large/006tKfTcly1g13lwdg3q2g30rd0f8mxw.gif)
 
 
 
 
 
+## 9. vuex
+
+总结了那么多，其实最佳实践就是vuex，这个后面再专门写文章学习吧
 
 
+
+看完这个文章，Vue组件化通信应该就难不住你了，也恭喜你度过青铜，正式迈入Vue秩序白银级别
+
+文章代码都在 https://github.com/shengxinjing/my_blog/tree/master/vue-communicate
 

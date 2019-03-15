@@ -45,14 +45,18 @@ export default {
 
     this.init(location.pathname)
 
-    this.$router.afterEach(trans=>{
+    this.$router.afterEach((trans,to)=>{
       setTimeout(()=>{
-      console.log(trans.path, location.pathname)
-
+        // console.log(to.path,'页面切换了',trans.path,location.pathname)
+        if(to.path!==location.pathname){
+          console.log('页面切换了')
+          this.init(trans.path)
+        }else{
+          console.log('页面没换')
+        }
       })
-      if(trans.path!==location.pathname){
-        this.init(trans.path)
-      }
+
+
     })
 
     // const doms = document.querySelectorAll('.sidebar-sub-header a')
@@ -176,7 +180,7 @@ const gitalk = new Gitalk({
   id: location.pathname,      // Ensure uniqueness and length less than 50
   distractionFreeMode: false  // Facebook-like distraction free mode
 })
-
+document.getElementById('gitalk-container').innerHTML = ''
         gitalk.render('gitalk-container')
     },
     createEditLink (repo, docsRepo, docsDir, docsBranch, path) {

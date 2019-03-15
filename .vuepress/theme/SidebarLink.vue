@@ -30,7 +30,7 @@ export default {
 }
 
 function renderLink (h, to, text, active) {
-  console.log(arguments)
+  // console.log(arguments)
   if(to.indexOf('#')===0){
     // 锚点
     if(active){

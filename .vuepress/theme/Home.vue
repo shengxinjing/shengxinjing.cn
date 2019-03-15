@@ -61,9 +61,6 @@ export default {
   },
   methods:{
     // jump(url){
-    //   console.log(url)
-    //   console.log(this.$router)
-    //   this.$router.push(url)
     // }
   },
   components: { NavLink },
@@ -83,10 +80,9 @@ export default {
         }
         return obj
       })
-      console.log(this.articles)
       // console.log(issues.data)
     }catch(e){
-      console.log(e)
+      // console.log(e)
     }
 
     // console.log(this.$site)

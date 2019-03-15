@@ -20,6 +20,7 @@ module.exports = {
     lastUpdated: '更新时间',
     nav: [
       // { text: 'Javascript', link: '/javascript/' },
+      { text: 'Vue', link: '/vue/' },      
       { text: '前端', link: '/fe/' },      
       { text: '读书', link: '/books/' },      
       // { text: 'React全家桶', link: '/react/' },
@@ -27,14 +28,25 @@ module.exports = {
       { text: '区块链', link: '/blockchain/' },
     ],
     sidebar: {
+      '/vue/': [
+        {
+          title: 'Vuejs',
+          collapsable: false,
+          children: [
+            '',
+            'communicate'
+          ],
+        },
+      ],
       '/fe/': [
         {
           title: '前端面试',
           collapsable: false,
           children: [
+            '',
             'interview',
             'qa',
-            '',
+            
           ],
         },
       ],

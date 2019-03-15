@@ -1,6 +1,6 @@
 let request = require('request')
 let fs = require('fs')
-const url = 'https://api.github.com/repos/shengxinjing/my_blog/issues?access_token=f723c5d1a424d594544e83be081ca519a9d258c2&labels=gitment'
+const url = 'https://api.github.com/repos/shengxinjing/my_blog/issues?access_token=d1f83c340ca16d5c7d2a234e440310b4c0d19b16&labels=Gitalk'
 
 // 发送Get请求
 // 第一个参数:请求的完整URL,包括参数

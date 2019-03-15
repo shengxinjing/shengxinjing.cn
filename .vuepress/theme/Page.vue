@@ -27,7 +27,7 @@
     </div>
     <slot name="bottom"/>
     <!-- <div id="SOHUCS" sid="id" ></div>  -->
-    <div id="github-comment"></div>
+    <div id="gitalk-container"></div>
   </div>
 </template>
 
@@ -70,7 +70,7 @@ export default {
 
 
     // console.log(this.$router)
-    // gitment.render('github-comment')
+    // gitment.render('gitalk-container')
     // function changefn
     // window.removeEventListener('hashchange')
     // window.addEventListener('hashchange', () => {
@@ -177,7 +177,7 @@ const gitalk = new Gitalk({
   distractionFreeMode: false  // Facebook-like distraction free mode
 })
 
-        gitalk.render('github-comment')
+        gitalk.render('gitalk-container')
     },
     createEditLink (repo, docsRepo, docsDir, docsBranch, path) {
       const bitbucket = /bitbucket.org/
@@ -237,7 +237,7 @@ function find (page, items, offset) {
 <style lang="stylus">
 @import './styles/config.styl'
 @require './styles/wrapper.styl'
-#github-comment{
+#gitalk-container{
   width:90%;
   margin:0 auto !important;
 }

@@ -1,7 +1,12 @@
 # Vue青铜-入门和组件化通信
 
-
 ## 入门
+
+
+
+[TOC]
+
+
 
 作为前端最容易上手的框架，Vue入门其实没啥说的，我放一段清单的代码，大家能看懂就说明能上手了
 
@@ -520,6 +525,12 @@ this.$bus.$on("event-bus",msg=>{
 ![eventbus](https://ws1.sinaimg.cn/large/006tKfTcly1g13lwdg3q2g30rd0f8mxw.gif)
 
 
+
+其实本身Vue就是一个订阅发布的实现，我们偷个懒，把Bus这个类可以删掉，新建一个空的Vue实例就可以啦
+
+```js
+Vue.prototype.$bus = new Vue()
+```
 
 
 

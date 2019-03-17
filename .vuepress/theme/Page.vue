@@ -163,7 +163,9 @@ export default {
   },
   methods: {
     init(path){
-      
+        if(location.pathname.indexOf('/mogu/')>-1){
+          return false
+        }
         // var gitment = new Gitment({
         //   id:location.origin+location.pathname,
         //   // id: '页面 ID', // 可选。默认为 location.href
@@ -175,16 +177,16 @@ export default {
         //     client_secret: 'b2eb8562b6aa805429378a2802622e2074f5bec8',
         //   },
         // })
-const gitalk = new Gitalk({
-  clientID: '6267f611f5d1cfc47824',
-  clientSecret: 'b2eb8562b6aa805429378a2802622e2074f5bec8',
-  repo: 'my_blog',
-  owner: 'shengxinjing',
-  admin: ['shengxinjing'],
-  id: location.pathname,      // Ensure uniqueness and length less than 50
-  distractionFreeMode: false  // Facebook-like distraction free mode
-})
-document.getElementById('gitalk-container').innerHTML = ''
+        const gitalk = new Gitalk({
+          clientID: '6267f611f5d1cfc47824',
+          clientSecret: 'b2eb8562b6aa805429378a2802622e2074f5bec8',
+          repo: 'my_blog',
+          owner: 'shengxinjing',
+          admin: ['shengxinjing'],
+          id: location.pathname,      // Ensure uniqueness and length less than 50
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+        document.getElementById('gitalk-container').innerHTML = ''
         gitalk.render('gitalk-container')
     },
     createEditLink (repo, docsRepo, docsDir, docsBranch, path) {

@@ -28,6 +28,17 @@ module.exports = {
       // { text: '区块链', link: '/blockchain/' },
     ],
     sidebar: {
+      '/mogu/': [
+        {
+          title: '小蘑菇',
+          collapsable: false,
+          children: [
+            '',
+            '01'
+          ],
+        },
+      ],
+
       '/vue/': [
         {
           title: 'Vuejs',

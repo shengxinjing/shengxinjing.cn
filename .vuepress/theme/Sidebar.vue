@@ -13,6 +13,7 @@
         <SidebarLink v-else :item="item"/>
       </li>
     </ul>
+
     <slot name="bottom"/>
   </div>
 </template>
@@ -71,6 +72,9 @@ function resolveOpenGroupIndex (route, items) {
 
 <style lang="stylus">
 @import './styles/config.styl'
+
+.weixin
+  width:20rem;
 
 .sidebar
   ul

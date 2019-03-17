@@ -32,10 +32,12 @@
         >{{ article.title }}
       
       </router-link> -->
-
+      <!-- <p>
+        {{article.body.split(' ')}}
+      </p> -->
       <a
           class="nav-link"
-          :href="article.body"
+          :href="article.body.split(' ')[0]"
         >{{ article.title }}
       
       </a>

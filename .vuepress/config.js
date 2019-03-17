@@ -25,7 +25,7 @@ module.exports = {
       { text: '读书', link: '/books/' },      
       // { text: 'React全家桶', link: '/react/' },
       { text: '造轮子', link: '/wheel/' },
-      { text: '区块链', link: '/blockchain/' },
+      // { text: '区块链', link: '/blockchain/' },
     ],
     sidebar: {
       '/vue/': [
@@ -81,7 +81,7 @@ module.exports = {
           collapsable: false,
           children: [
             '',
-            'getting-started',
+            // 'getting-started',
           ],
         },
       ],

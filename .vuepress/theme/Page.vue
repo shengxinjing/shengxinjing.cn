@@ -1,6 +1,10 @@
 <template>
   <div class="page">
     <Content :custom="false"/>
+    <div class="right-weixin">
+     <img class="weixin" src="https://ws4.sinaimg.cn/large/006tKfTcly1g15l50q24fj30i80kuq6c.jpg" alt="" />
+
+    </div>
     <div class="page-edit">
       <div class="edit-link" v-if="editLink">
         <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
@@ -242,9 +246,18 @@ function find (page, items, offset) {
 @import './styles/config.styl'
 @require './styles/wrapper.styl'
 #gitalk-container{
-  width:90%;
-  margin:0 auto !important;
+  width:740px;
+  margin:0 30px
+  // margin:0 auto !important;
 }
+.right-weixin
+  position fixed
+  left: 1200px
+  top:120px
+  width:200px;
+  z-index:200;
+  img 
+    width:100%;
 .page
   padding-bottom 2rem
 

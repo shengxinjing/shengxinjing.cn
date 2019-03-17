@@ -37,7 +37,7 @@
       </p> -->
       <a
           class="nav-link"
-          :href="article.body.split(' ')[0]"
+          :href="article.body"
         >{{ article.title }}
       
       </a>
@@ -55,6 +55,7 @@
 import NavLink from './NavLink.vue'
 import axios from 'axios'
 import articles from './article.json'
+import dayjs from 'dayjs'
 export default {
   data(){
     return {
@@ -67,16 +68,20 @@ export default {
   },
   components: { NavLink },
   async mounted(){
+
+    console.log(this.$site.pages)
     // axios.defaults.headers.common['Authorization'] = "5de13e577661d05daaa9995a4c60d46d4f5c81c7"
     try{
       // const issues = await axios.get('https://api.github.com/repos/shengxinjing/my_blog/issues?access_token=5de13e577661d05daaa9995a4c60d46d4f5c81c7')
       // const articles = issues.data.filter(v=>v.author_association=="OWNER"&&v.created_at.slice(0,4)>'2017')
       this.articles = articles.map(v=>{
+        const body = v.body.slice(22).split('\n').join('').split(' ')[0]
+
         const obj = {
           title:v.title.split('|')[0],
           create_time:v.created_at.slice(0,10),
-          body:v.body.slice(22).split('\n').join(''),
           comments:v.comments+'',
+          body,
           
 
         }

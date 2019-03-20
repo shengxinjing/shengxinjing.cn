@@ -1,10 +1,26 @@
 <template>
   <div class="page">
+    <div v-if="$page.frontmatter.video" style="margin-top:57px;">
+      <div v-for="v in $page.frontmatter.video">
+          <div class="scrimba">
+            <a :href="v" target="_blank">🔞文章配套视频</a>
+          </div>
+      </div>
+    </div>
     <Content :custom="false"/>
+    <div v-if="$page.frontmatter.video">
+      <div v-for="v in $page.frontmatter.video">
+          <div class="scrimba">
+            <a :href="v">🔞文章配套视频</a>
+          </div>
+          <iframe :src="v" frameborder="0"></iframe>
+      </div>
+    </div>
+    
     <div class="right-weixin">
      <img class="weixin" src="https://ws4.sinaimg.cn/large/006tKfTcly1g15l50q24fj30i80kuq6c.jpg" alt="" />
-
     </div>
+
     <div class="page-edit">
       <div class="edit-link" v-if="editLink">
         <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>

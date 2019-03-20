@@ -1,14 +1,19 @@
 ---
 description: Vue进阶必备 哈哈哈
+video: 
+- https://scrimba.com/p/pnyzgAP/cqKK4psq 
+# - https://scrimba.com/p/pnyzgAP/c2Be7TB
 
 ---
 # Vue青铜-入门和组件化通信
 
+![vue01](https://ws1.sinaimg.cn/large/006tKfTcgy1g1987p341jj31h80q2dzh.jpg)
+
 ## 入门
 
-<!-- <iframe src="https://scrimba.com/p/pnyzgAP/cqKK4psq"></iframe> -->
 
-[TOC]
+
+[[toc]]
 
 
 
@@ -21,7 +26,7 @@ description: Vue进阶必备 哈哈哈
   <div id="app">
     <h1>{{title}}</h1>
     <div>
-      <input type="text" v-model="val">
+      <input type="text" v-model="val" >
       <button @click="add">添加</button>
       <button @click="clear">清空</button>
     </div>

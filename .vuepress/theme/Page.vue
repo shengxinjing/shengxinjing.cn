@@ -10,9 +10,6 @@
     <Content :custom="false"/>
     <div v-if="$page.frontmatter.video">
       <div v-for="v in $page.frontmatter.video">
-          <div class="scrimba">
-            <a :href="v">🔞文章配套视频</a>
-          </div>
           <iframe :src="v" frameborder="0"></iframe>
       </div>
     </div>

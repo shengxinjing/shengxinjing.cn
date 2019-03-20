@@ -1,7 +1,7 @@
 ---
 description: Vue进阶必备 哈哈哈
-video: 
-- https://scrimba.com/p/pnyzgAP/cqKK4psq 
+# video: 
+# - https://scrimba.com/p/pnyzgAP/cqKK4psq 
 # - https://scrimba.com/p/pnyzgAP/c2Be7TB
 
 ---
@@ -551,5 +551,5 @@ Vue.prototype.$bus = new Vue()
 
 看完这个文章，Vue组件化通信应该就难不住你了，也恭喜你度过青铜，正式迈入Vue秩序白银级别
 
-文章代码都在 https://github.com/shengxinjing/my_blog/tree/master/vue-communicate
+[文章代码](https://github.com/shengxinjing/my_blog/tree/master/vue-communicate)
 

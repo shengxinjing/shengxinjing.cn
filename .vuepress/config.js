@@ -7,7 +7,7 @@ module.exports = {
   ],
 
   markdown: {
-    lineNumbers: true,
+    // lineNumbers: true,
     slugify(str){
       // return 'xx'+str
       // console.log(arguments)
@@ -92,7 +92,7 @@ module.exports = {
           collapsable: false,
           children: [
             '',
-            // 'getting-started',
+            // '../vue/communicate',
           ],
         },
       ],

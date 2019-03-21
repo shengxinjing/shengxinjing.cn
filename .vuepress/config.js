@@ -45,7 +45,8 @@ module.exports = {
           collapsable: false,
           children: [
             '',
-            'communicate'
+            'communicate',
+            'vuex',
           ],
         },
       ],

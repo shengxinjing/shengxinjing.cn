@@ -248,7 +248,7 @@ export default new Vuex.Store({
 
 每次点击 count都变了，页面并没有相应
 
-![01](/Users/pangoo/Desktop/shengxinjing/vuex/01.gif)
+![01](https://ws2.sinaimg.cn/large/006tKfTcly1g1ai9skvskg30f109pt9j.gif)
 
 ## 7. 响应式state
 
@@ -293,7 +293,7 @@ class Store {
 
 bingo
 
-![02](/Users/pangoo/Desktop/shengxinjing/vuex/02.gif)
+![02](https://ws2.sinaimg.cn/large/006tKfTcly1g1aiapswtrg30f109pta6.gif)
 
  
 
@@ -344,7 +344,7 @@ vuex支持拆包，每个module有自己的state，getter，mutations，和actio
 
 
 
-![image-20190321123937642](/Users/pangoo/Library/Application%20Support/typora-user-images/image-20190321123937642.png)
+![image-20190321123937642](https://ws2.sinaimg.cn/large/006tKfTcly1g1ai9xe6e4j314o0tw421.jpg)
 
 ## 11. 注册modules
 
@@ -773,7 +773,7 @@ export default {
 
 ```
 
-![03](/Users/pangoo/Desktop/shengxinjing/vuex/03.gif)
+![03](https://ws1.sinaimg.cn/large/006tKfTcly1g1aia4f645g30iv0aeta7.gif)
 
 
 

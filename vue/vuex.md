@@ -2,6 +2,10 @@
 
 ![image-20190321163740602](https://ws4.sinaimg.cn/large/006tKfTcly1g1ai6q0alsj31im0p4e00.jpg)
 
+[代码](https://github.com/shengxinjing/my_blog/tree/master/myvuex)
+
+https://github.com/shengxinjing/my_blog/tree/master/myvuex
+
 ## 1. Vuex实战
 
 上次文章介绍了Vue组件化之间通信的各种姿势，其中vuex基本算是终极解决方案了，这个没啥说的，直接贴代码把 

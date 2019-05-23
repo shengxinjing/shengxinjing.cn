@@ -6,3 +6,5 @@ node_modules
 
 /mogu
 **/*/.DS_Store
+./.DS_Store
+./public/.DS_Store

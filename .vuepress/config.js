@@ -67,6 +67,7 @@ module.exports = {
           title: '读书',
           collapsable: false,
           children: [
+            '2020',
             '2019',
             'mpvue-update',
             '',

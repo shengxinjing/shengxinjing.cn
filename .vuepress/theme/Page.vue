@@ -267,7 +267,7 @@ function find (page, items, offset) {
 }
 .right-weixin
   position fixed
-  left: 1200px
+  left: 1300px
   top:120px
   width:200px;
   z-index:200;

@@ -41,7 +41,7 @@
         >{{ article.title }}
       
       </a>
-      <Badge type='' :text="article.comments+'条评论'"/>
+      <!-- <Badge type='' :text="article.comments+'条评论'"/> -->
 
       </h3>
     </div>
@@ -59,7 +59,13 @@ import dayjs from 'dayjs'
 export default {
   data(){
     return {
-      articles:[]
+      articles:[
+        {
+          title:'2020行动计划',
+          create_time:'2020-01-01',
+          body:"/books/2020.html"
+        }
+      ]
     }
   },
   methods:{
@@ -67,7 +73,7 @@ export default {
     // }
   },
   components: { NavLink },
-  async mounted(){
+  async mounted1(){
 
     console.log(this.$site.pages)
     // axios.defaults.headers.common['Authorization'] = "5de13e577661d05daaa9995a4c60d46d4f5c81c7"

@@ -1,6 +1,10 @@
 # Vue秩序白银 —构建自己的Vuex
 
+![image-20190321163740602](https://ws4.sinaimg.cn/large/006tKfTcly1g1ai6q0alsj31im0p4e00.jpg)
 
+[代码](https://github.com/shengxinjing/my_blog/tree/master/myvuex)
+
+https://github.com/shengxinjing/my_blog/tree/master/myvuex
 
 ## 1. Vuex实战
 
@@ -180,9 +184,9 @@ class Store {
 }
 ```
 
+![image-20190321163916001](https://ws2.sinaimg.cn/large/006tKfTcly1g1ai8aicnbj30om0jq1b9.jpg)
 
-
-## 6. Is mutation
+## 6. mutation
 
 修改数据，并且需要通知到组件，这个需要数据是响应式的，我们需要Vue的响应式支持，所以这里也可以看到Vuex是和Vue强绑定的，不能脱离vue单独使用
 

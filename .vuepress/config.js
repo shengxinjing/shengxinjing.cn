@@ -95,6 +95,7 @@ module.exports = {
           collapsable: false,
           children: [
             '',
+            'weibo',
             // '../vue/communicate',
           ],
         },

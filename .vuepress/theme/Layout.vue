@@ -24,12 +24,13 @@
 <script>
 import Vue from 'vue'
 import nprogress from 'nprogress'
+
 import Home from './Home.vue'
 import Navbar from './Navbar.vue'
 import Page from './Page.vue'
 import Sidebar from './Sidebar.vue'
 import { resolveSidebarItems } from './util'
-
+// VueClipboard.config.autoSetContainer = true
 export default {
   components: { Home, Page, Sidebar, Navbar },
   data () {

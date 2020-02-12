@@ -2,7 +2,7 @@
   <div>
     <textarea class="weibo" v-model="text" name id cols="60" rows="5"></textarea>
     <div class="tip custom-block">
-      <p class="custom-block-title">输出</p>
+      <p class="custom-block-title"></p>
       <p ref="container" id="container">{{transformText}}</p>
     </div>
     <div>

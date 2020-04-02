@@ -14,7 +14,7 @@ module.exports = {
       return  crypto.createHash('md5').update(str).digest('hex').slice(0,4);
     }
   },
-  ga:"UA-120821049-1",
+  // ga:"UA-120821049-1",
   themeConfig: {
     repo: 'shengxinjing',
     lastUpdated: '更新时间',
@@ -72,9 +72,6 @@ module.exports = {
             '2019',
             'mpvue-update',
             '',
-            
-            
-
           ],
         },
       ],
@@ -96,6 +93,7 @@ module.exports = {
           children: [
             '',
             'weibo',
+            'moyu',
             // '../vue/communicate',
           ],
         },

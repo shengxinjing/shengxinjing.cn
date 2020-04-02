@@ -15,7 +15,7 @@
     </div>
     
     <div class="right-weixin">
-     <img class="weixin" src="https://ws4.sinaimg.cn/large/006tKfTcly1g15l50q24fj30i80kuq6c.jpg" alt="" />
+     <img class="weixin" src="//image.shengxinjing.cn/qrcode.jpg" alt="" />
     </div>
 
     <div class="page-edit">
@@ -44,16 +44,14 @@
     </div>
     <slot name="bottom"/>
     <!-- <div id="SOHUCS" sid="id" ></div>  -->
-    <div id="gitalk-container"></div>
+    <!-- <div id="gitalk-container"></div> -->
   </div>
 </template>
 
 <script>
 import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
-// import 'gitment/style/default.css'
-// import Gitment from 'gitment'
-import 'gitalk/dist/gitalk.css'
-import Gitalk from 'gitalk'
+// import 'gitalk/dist/gitalk.css'
+// import Gitalk from 'gitalk'
 
 
 export default {
@@ -190,17 +188,17 @@ export default {
         //     client_secret: 'b2eb8562b6aa805429378a2802622e2074f5bec8',
         //   },
         // })
-        const gitalk = new Gitalk({
-          clientID: '6267f611f5d1cfc47824',
-          clientSecret: 'b2eb8562b6aa805429378a2802622e2074f5bec8',
-          repo: 'my_blog',
-          owner: 'shengxinjing',
-          admin: ['shengxinjing'],
-          id: location.pathname,      // Ensure uniqueness and length less than 50
-          distractionFreeMode: false  // Facebook-like distraction free mode
-        })
-        document.getElementById('gitalk-container').innerHTML = ''
-        gitalk.render('gitalk-container')
+        // const gitalk = new Gitalk({
+        //   clientID: '6267f611f5d1cfc47824',
+        //   clientSecret: 'b2eb8562b6aa805429378a2802622e2074f5bec8',
+        //   repo: 'my_blog',
+        //   owner: 'shengxinjing',
+        //   admin: ['shengxinjing'],
+        //   id: location.pathname,      // Ensure uniqueness and length less than 50
+        //   distractionFreeMode: false  // Facebook-like distraction free mode
+        // })
+        // document.getElementById('gitalk-container').innerHTML = ''
+        // gitalk.render('gitalk-container')
     },
     createEditLink (repo, docsRepo, docsDir, docsBranch, path) {
       const bitbucket = /bitbucket.org/

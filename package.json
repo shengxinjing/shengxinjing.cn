@@ -10,7 +10,7 @@
     "dayjs": "^1.8.10",
     "gitalk": "^1.5.0",
     "gitment": "0.0.3",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "request": "^2.88.0",
     "vue-clipboard2": "^0.3.1"
   }

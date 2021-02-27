@@ -12,7 +12,7 @@ heroImage: /snail.jpg
 #   details: 新技术来临时 我们应该包容
 
   
-footer: MIT Licensed | Copyright © 2018-present
+footer: MIT Licensed | Copyright © 京ICP备18000331号
 
 ---
 
